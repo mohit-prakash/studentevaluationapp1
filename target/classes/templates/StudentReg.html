@@ -1,0 +1,128 @@
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Student Register</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <div class="card-header text-center bg-primary text-white">
+            <h1>Student Register</h1>
+        </div>
+        <div class="card-body">
+            <form th:action="@{/student/save}" method="post">
+                <!-- row-2 -->
+                <div class="row">
+                    <div class="col-2">
+                        <label for="firstName">First Name</label>
+                    </div>
+                    <div class="col-4">
+                        <input type="text" name="firstName" id="firstName" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <span id="firstNameError"></span>
+                    </div>
+                </div>
+                <!-- row-3 -->
+                <div class="row">
+                    <div class="col-2">
+                        <label for="lastName">Last Name</label>
+                    </div>
+                    <div class="col-4">
+                        <input type="text" name="lastName" id="lastName" class="form-control"></input>
+                    </div>
+                    <div class="col-6">
+                        <span id="lastNameError"></span>
+                    </div>
+                </div>
+                <!-- row-4 -->
+                <div class="row">
+                    <div class="col-2">
+                        <label for="dob">DOB</label>
+                    </div>
+                    <div class="col-4">
+                        <input type="date" name="dob" id="dob" class="form-control"></input>
+                    </div>
+                    <div class="col-6">
+                        <span id="dobError"></span>
+                    </div>
+                </div>
+                <!-- #row5 -->
+                <div class="row">
+                    <div class="col-2">
+                        <label for="gender">Gender</label>
+                    </div>
+                    <div class="col-4">
+                        <select name="gender" id="gender" class="form-control">
+                            <option value="">--Select--</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <span id="genderError"></span>
+                    </div>
+                </div>
+                <!-- #row6 -->
+                <div class="row">
+                    <div class="col-2">
+                        <label for="section">Section</label>
+                    </div>
+                    <div class="col-4">
+                        <select name="section" id="section" class="form-control">
+                            <option value="">--Select--</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <span id="sectionError"></span>
+                    </div>
+                </div>
+                <!-- row-7 -->
+                <div class="row">
+                    <div class="col-2">
+                        <label for="marks1">Marks1</label>
+                    </div>
+                    <div class="col-4">
+                        <input type="text" name="marks1" id="marks1" class="form-control"></input>
+                    </div>
+                    <div class="col-6">
+                        <span id="marks1Error"></span>
+                    </div>
+                </div>
+                <!-- row-8 -->
+                <div class="row">
+                    <div class="col-2">
+                        <label for="marks2">Marks2</label>
+                    </div>
+                    <div class="col-4">
+                        <input type="text" name="marks2" id="marks2" class="form-control"></input>
+                    </div>
+                    <div class="col-6">
+                        <span id="marks2Error"></span>
+                    </div>
+                </div>
+                <!-- row-9 -->
+                <div class="row">
+                    <div class="col-2">
+                        <label for="marks3">Marks3</label>
+                    </div>
+                    <div class="col-4">
+                        <input type="text" name="marks3" id="marks3" class="form-control"></input>
+                    </div>
+                    <div class="col-6">
+                        <span id="marks3Error"></span>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success">Create </button>
+            </form>
+        </div>
+        <div class="card-footer bg-white text-info" th:if="${message}!=null">
+            <span th:text="${message}"></span>
+        </div>
+    </div>
+</div>
+</body>
+</html>
